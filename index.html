@@ -167,15 +167,19 @@
                 </div>
 
                 <div id="col" class="lg-6">
-                    <form>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Lengkap</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                    <strong>terima kasih</strong> pesan anda sudah saya terima.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    <form name="game-mod-form">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Nama Lengkap</label>
+                          <input type="text" class="form-control" id="name" aria-describedby="name" name="nama"/>
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your nama with anyone else.</small>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Email</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" id="email" aria-describedby="email" name="email">
                         </div>
                         <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -193,7 +197,12 @@
                           <br>
                           </label>
                         </div>
-                        <button type="submit" class="btn btn-dark">kirim pesan</button>
+                        <button type="submit" class="btn btn-primary btn-kirim">kirim pesan</button>
+
+                        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          Loading...
+                        </button>
                       </form>
 
                 </div>
@@ -227,5 +236,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxOVuXUamoqa9RupfWzEyK0IwNC7dTNk9kscRVUli4bqJlVEPT3GHeV6XpOVJ2onOqS/exec'
+      const form = document.forms['game-mod-form']
+      const btnkirim = document.querySelector('.btn-kirim');
+      const btnloading = document.querySelector('.btn-loading');
+      const myalert = document.querySelector('.my-alert');
+      
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol submit diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnloading.classList.toggle('d-none');
+        btnkirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btnloading.classList.toggle('d-none');
+            btnkirim.classList.toggle('d-none');
+            //tampilkan alert
+            myalert.classList.toggle('d-none')
+            //reset formnya
+            form.reset();
+            console.log('Success!', response)
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
