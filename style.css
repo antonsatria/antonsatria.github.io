@@ -20,165 +20,91 @@
     font-family: sans-serif;
 }
 .we{
-    background-color:  #3583c0;
+    background-color:  #333;
     color: #ffff;
     width: 100px;
     height: 25px;
+}
+.tengah{
+    color: #333;
+    font-family: sans-serif;
+    
 }
 .yt{
     background-image: url(../img/18960.jpg);
 }
 .A{
-    background-color:  #3583c0;
+    background-color:  #1c77e0;
     color: #ffff;
     width: 100px;
     height: 25px;
 }
-.page-item {
-    text-align: center;
-}
-section, footer{
-    padding: 10px 0;
-}
 .pagination-outer{ text-align: center; }
 .pagination{
-    font-family: 'Itim', cursive;
+    font-family: 'Lexend Deca', sans-serif;
     display: inline-flex;
+    position: relative;
 }
 .pagination li a.page-link{
     color: #fff;
-    background: #111;
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 33px;
-    height: 35px;
-    width: 35px;
-    padding: 0;
-    margin: 0 5px;
-    border: none;
-    border-radius: 10px;
-    display: block;
-    transition: all 0.3s ease 0s;
-}
-.pagination li a.page-link:hover,
-.pagination li a.page-link:focus{
-    color: #fff;
-    background: #F34236;
-    animation: animate 1s infinite;
-}
-.pagination li.active a.page-link,
-.pagination li.active a.page-link:hover{
-    animation: animate1 1s infinite;
-}
-.pagination li:first-child a.page-link,
-.pagination li:last-child a.page-link{
-    font-size: 30px;
-    line-height: 30px;
-}
-@keyframes animate{
-    0%{ background: #2095F2; }
-    20%{ background: #E81E62; }
-    40%{ background: #9B26AF; }
-    60%{ background: #6639B6; }
-    80%{ background: #2095F2; }
-    100%{ background: #2095F2; }
-}
-@keyframes animate1{
-    0%{ background: #2095F2; }
-    20%{
-        background: #E81E62;
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    }
-    40%{
-        background: #9B26AF;
-        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-    }
-    60%{
-        background: #6639B6;
-        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    }
-    80%{
-        background: #2095F2;
-        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-    }
-    100%{ background: #2095F2; }
-}
-@media only screen and (max-width: 480px){
-    .pagination{
-        font-size: 0;
-        display: block;
-    }
-    .pagination li{
-        display: inline-block;
-        margin: 0 0 10px;
-    }
-}
-
-
-
-
-.text-effect{
-    color: #fff;
-    font-family: 'Langar', cursive;
-    font-size: 100px;
-    font-weight: 700;
+    background-color: #333;
+    font-size: 23px;
     text-align: center;
-    letter-spacing: 5px;
-    text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777, 1px 1px 0 #777;
+    line-height: 45px;
+    height: 45px;
+    width: 45px;
+    padding: 0;
+    margin: 0 12px 0 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    overflow: hidden;
     position: relative;
     z-index: 1;
 }
-.text-effect:before,
-.text-effect:after{
-    content: attr(data-content);
-    color: #005fcc;
+.pagination li.active a.page-link,
+.pagination li a.page-link:hover,
+.pagination li.active a.page-link:hover{
+    color: #fff;
+    border: none;
+}
+.pagination li:last-child a.page-link{ margin-right: 0; }
+.pagination li a.page-link:before,
+.pagination li a.page-link:after{
+    content: '';
+    background-color: #00b894;
+    height: 0;
     width: 100%;
-    height: 100%;
-    text-shadow: none;
     position: absolute;
-    top: 5%;
-    left: -0.8%;
+    left: 0;
+    top: 0;
     z-index: -1;
-    animation: animate 1.2s infinite;
+    transition: all 0.3s ease 0s;
 }
-.text-effect:after{
-    color: #ec2348;
-    top: 11%;
-    left: -1.5%;
-    z-index: -2;
-    animation: animate_1 1.2s infinite;
+.pagination li a.page-link:after{
+    background-color: #00cea1;
+    height: 50%;
+    opacity: 0;
+    transform: rotateX(180deg);
+    transform-origin: top center;
+    top: 50%;
+    transition: all 0.3s ease 0.2s;
 }
-@keyframes animate{
-    25%{ color: #ec2348; }
- 
-    50%{ color: #005fcc; }
- 
-    76%{ color: #ec2348; }
- 
-    100%{ color: #005fcc; }
+.pagination li.active a.page-link:before,
+.pagination li a.page-link:hover:before,
+.pagination li.active a.page-link:hover:before{
+    height: 50%;
 }
-@keyframes animate_1{
-    25%{ color: #005fcc; }
- 
-    50%{ color: #ec2348; }
- 
-    76% { color: #005fcc; }
- 
-    100%{ color: #ec2348; }
+.pagination li.active a.page-link:after,
+.pagination li a.page-link:hover:after,
+.pagination li.active a.page-link:hover:after{
+    opacity: 1;
+    transform: rotateX(0);
 }
-@media only screen and (max-width: 990px){
-    .text-effect{ font-size: 90px; }
+@media only screen and (max-width: 480px){
+    .pagination{ display: block; }
+    .pagination li{
+        display: inline-block;
+        margin: 0 0 5px;
+    }
 }
-@media only screen and (max-width: 767px){
-    .text-effect{ font-size: 70px; }
-}
-@media only screen and (max-width: 576px){
-    .text-effect{ font-size: 55px; }
-}
-@media only screen and (max-width: 479px){
-    .text-effect{ font-size: 40px; }
-} 
-
-
-
-
