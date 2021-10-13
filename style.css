@@ -1,27 +1,21 @@
 .lead{
-    color: black;
     font-family: sans-serif;
 }
 .ab{
-    color: black;
+
     font-family: sans-serif;
     font-size: medium;
 }
 .display-4{
-    color: black;
     font-family: sans-serif;
 }
 .oi{
-    color: black;
-    font-family: sans-serif;
+font-family: sans-serif;
 }
 .qw{
-    color: black;
     font-family: sans-serif;
 }
 .we{
-    background-color:  #333;
-    color: #ffff;
     width: 100px;
     height: 25px;
 }
@@ -29,9 +23,6 @@
     color: #333;
     font-family: sans-serif;
     
-}
-.yt{
-    background-image: url(../img/18960.jpg);
 }
 .A{
     background-color:  #1c77e0;

@@ -37,6 +37,13 @@
         .card{
           margin-top: auto;
         }
+        #darkmode {
+        background: #333;
+        color: #fff;
+         }
+         #darkmode .card {
+           background-color:#333;
+         }
     </style>
 
 
@@ -107,6 +114,12 @@
                   </div>
               </div>
           </div>
+          <br>
+          <center><h3>Mode</h3></center>
+          <center><p>
+            <span onclick="setDarkMode(false)"><button type="button" class="lambang btn btn-outline-success">terang</button></span>
+            <span onclick="setDarkMode(true)"><button type="button" class="lambang btn btn-outline-success">gelap</button></span>
+          </p></center>
       </div>
     </section>
       <br>
@@ -564,5 +577,21 @@
     <script src="js/jquery-3.6.0.min.js"></script>
 
     <script src="js/script.js"></script>
+    <script>
+      if(localStorage.getItem('theme') == 'dark')
+      setDarkMode(true)
+
+      function setDarkMode(isDark) {
+        if(isDark) {
+          document.body.setAttribute('id', 'darkmode')
+          localStorage.setItem('theme', 'dark')
+        } else {
+          document.body.setAttribute('id', '')
+          localStorage.removeItem('theme')
+        }
+      
+      
+      }
+    </script>
   </body>
 </html>
