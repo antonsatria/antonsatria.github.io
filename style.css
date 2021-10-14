@@ -18,6 +18,12 @@ font-family: sans-serif;
 .we{
     width: 100px;
     height: 25px;
+    background-color:#333
+}
+#darkmode .we{
+    width: 100px;
+    height: 25px;
+    background-color: #fff;
 }
 .tengah{
     color: #333;
