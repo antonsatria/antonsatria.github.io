@@ -1,22 +1,24 @@
 <html lang="en" id="home">
   <head>
- 
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <script src="main.js"></script>
+
+    <!-- emoticon -->
+    
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!--my css-->
     <style>
         section{
             min-height: 420px;
-        }
-        .search-form{
-          margin-top: 15px;
-          float: right;
-          margin-right: 100px;
         }
         input[type=text]{padding: 7px;
         border: none;
@@ -41,10 +43,10 @@
         #darkmode {
         background: #333;
         color: #fff;
-         }
-         #darkmode .card {
-           background-color:#333;
-         }
+        }
+        #darkmode .card {
+        background-color:#333;
+        }
     </style>
 
 
@@ -67,9 +69,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              <a class="nav-link" href="about.html"title= "buka halaman ini" class="page-scroll">about</a>
-              <a class="nav-link" href="game.html" class="page-scroll">game</a>
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
+              <a class="nav-link" href="#about"title= "buka halaman ini" class="page-scroll">about</a>
+              <a class="nav-link" href="#game" class="page-scroll">game</a>
               <a class="nav-link" href="cara.html" class="page-scroll">Cara Download</a>
               <a class="nav-link" href="https://wa.me/+6281337625385" target="_blank">contact</a>
             </div>
@@ -85,7 +87,7 @@
           <div class="yt">
             <img src="https://i.pinimg.com/originals/97/e4/1d/97e41dedc55668d69833509878a42541.png" width="35%" class="rounded-circle">
           </div>
-          <h1 class="display-4">Anton Satria</h1>
+          <h1 class="display-4" id="jw">Anton Satria</h1>
           <p class="lead">selamat datang di webiste saya kalian bisa download game disini</p>
         </div>
       </div>
@@ -124,11 +126,11 @@
       </div>
     </section>
       <br>
-      <br>
+      <br id="game">
       <br>
 
 
-<section id="game" class="game bg-success pb-4">
+<section  class="game bg-success pb-4">
       <div class="container">
           <div class="raw">
               <div class="col text-center">
@@ -164,9 +166,9 @@
                       </div>
                     </a></center>
                       </div>
-                   </div>
+                    </div>
                   </div>
-              </div>        
+                </div>        
               <div class="col-md">
                 <div class="card">
                     <img src="https://an1.com/uploads/subwaygo8jfuyrqaz8.png"
@@ -282,7 +284,7 @@
                       </a></center>
                       </div>
                     </div>
-                </div>  
+                </div>
                 <div class="col-md">
                   <div class="card">
                       <img src="img/crossyroad3mo2ma1.png" class="card-img-top" alt="...">
@@ -468,7 +470,7 @@
                     <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
                         <div class="card-body">
                           <h5 class="card-title">Sosial media</h5>
-                          <p class="card-text">IG anton satria</p>
+                          <p class="card-text">IG anton Satria</p>
                         </div>
                       </div>
                 </div>
@@ -512,7 +514,7 @@
                       </form>
 
                 </div>
-               </div>
+              </div>
 
         </div>
     </section>
@@ -548,6 +550,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxOVuXUamoqa9RupfWzEyK0IwNC7dTNk9kscRVUli4bqJlVEPT3GHeV6XpOVJ2onOqS/exec'
       const form = document.forms['game-mod-form']
